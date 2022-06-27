@@ -1,0 +1,13 @@
+version: "3"
+services:
+  leaves-ms:
+    image: gateway-ms
+    ports:
+      - "8090:8090"
+    networks:
+      - stc_task
+
+
+
+networks:
+  stc_task:

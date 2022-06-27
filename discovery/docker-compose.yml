@@ -1,0 +1,11 @@
+version: "3"
+services:
+  disocvery-ms:
+    image: disocvery-ms
+    ports:
+      - "8089:8089"
+    networks:
+      - stc_task
+
+networks:
+  stc_task:

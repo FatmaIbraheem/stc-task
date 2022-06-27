@@ -1,0 +1,21 @@
+version: "3"
+services:
+  leaves-ms:
+    image: leaves-ms
+    ports:
+      - "8080:8080"
+    networks:
+      - stc_task
+    depends_on:
+      - employee_db
+
+  mysqldb:
+    image: mysql:8
+    networks:
+      - stc_task
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=employee_db
+
+networks:
+  stc_task:

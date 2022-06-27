@@ -1,0 +1,22 @@
+
+server:
+  port: 8080
+
+eureka:
+  instance:
+    hostname: localhost
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: employee
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/employee/**
+        - id: leaves
+          uri: http://localhost:9090/
+          predicates:
+            - Path=/leaves/**
